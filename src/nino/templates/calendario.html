@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Calendario</title>
+    {% load static %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <a class="navbar-bran" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><strong>Calendario</strong><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin"><strong>Administración</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/"><strong>Inicio</strong></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+    <img src={% static 'nino/images/log.png' %} width="100px">
+    </form>
+  </div>
+</nav>
+
+<div id="fondo">
+    <center id="">
+      <br>
+      <iframe src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23b3fffe&amp;src=canica.sanmarcos%40gmail.com&ctz=America%2FGuatemala&amp;src=Y2FuaWNhLnNhbm1hcmNvc0BnbWFpbC5jb20&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZXMuZ3QjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%2333B679&amp;color=%230B8043&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=1" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </center>
+</div>
+  </body>
+</html>

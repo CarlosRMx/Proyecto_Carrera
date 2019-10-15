@@ -1,0 +1,52 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+            <script>
+                    function myFunction() {
+                       window.print();
+                    }
+                </script>      
+            <center>
+                    <h1 style="color: blue;"><strong>Listado General de niños</strong></h1>
+                    
+            </center>
+            <button class="btn btn-success hidden-print float-right" style="width: 15%;" onclick="myFunction()">Imprimir</button>
+            <br>
+            <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Nombre del niño</th>
+                        <th scope="col">Apellidos del niño</th>
+                        <th scope="col">Fecha de evalucion biopsicosocial</th>
+                        <th scope="col">Motivo de ingreso</th>
+                        <th scope="col">Género</th>
+                        <th scope="col">CUI</th>
+                        <th scope="col">Fecha de nacimiento</th>
+                        <th scope="col">Lugar de residencia</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for reporte in object_list %}
+                            
+                        
+                      <tr>
+                        <th scope="row">{{reporte.id}}</th>
+                        <td>{{reporte.nombre_nino}}</td>
+                        <td>{{reporte.apellido_nino}}</td>
+                        <td>{{reporte.fecha_evaluacion}}</td>
+                        <td>{{reporte.motivo_ingreso}}</td>
+                        <td>{{reporte.sexo}}</td>
+                        <td>{{reporte.cui}}</td>
+                        <td>{{reporte.fecha_nacimiento}}</td>
+                        <td>{{reporte.lugar_residencia}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+        
+    </body>
+</html>

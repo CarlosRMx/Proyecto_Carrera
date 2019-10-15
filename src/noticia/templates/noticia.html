@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sección de noticias</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="/noticia">CANICA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <img src="{% static 'img/log.png' %}" width="100px">
+          </form>
+        </div>
+      </nav>
+
+    <center>
+        <h1 style="color:blue"><strong>Sección de noticias</strong></h1>
+    </center>
+    <div class="col-md-5">
+        <div class="card" style="width: 18rem;">
+            {% for noticia in object_list %}
+            <img src="{{noticia.imagen.url}}" class="card-img-top" width="200px">
+            <div class="card-body">
+              <h5 class="card-title">{{noticia.titulo_noticia}}</h5>
+              <p class="card-text">{{noticia.fecha_publicacion}}</p>
+              <a href="{% url 'noticia:detail' noticia.id %}" class="btn btn-outline-info">Mas información</a>
+            </div>
+            {% endfor %}
+            <br>
+          </div>
+
+    </div>
+</body>
+</html>
